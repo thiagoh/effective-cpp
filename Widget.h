@@ -14,6 +14,9 @@ public:
 	Widget(const Widget& rhs);
 	virtual ~Widget();
 
+	void doSomethingWithCopy(const Widget rhs);
+	void doSomethingWithoutCopy(const Widget& rhs);
+
 	Widget& operator=(const Widget& rhs);
 };
 

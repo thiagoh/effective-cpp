@@ -6,6 +6,7 @@
  */
 
 #include <stdio.h>
+#include <unistd.h>
 #include "Widget.h"
 
 Widget::Widget() {
@@ -23,4 +24,13 @@ Widget::~Widget() {
 Widget& Widget::operator=(const Widget& rhs) {
 	printf("widget assign operator\n");
 	return *this;
+}
+
+void Widget::doSomethingWithCopy(const Widget rhs) {
+	printf("executing doSomethingWithCopy\n");
+	sleep(3);
+}
+
+void Widget::doSomethingWithoutCopy(const Widget& rhs) {
+	printf("executing doSomethingWithoutCopy\n");
 }
