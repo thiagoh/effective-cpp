@@ -18,6 +18,8 @@ $(target): $(objects)
 
 main.o: Widget.o
 
+.PHONY: clean
+
 clean:
 	@rm $(objects) $(target) || true
 

@@ -5,7 +5,9 @@
  *      Author: thiago
  */
 #include <stdio.h>
+#include <iostream>
 #include "Widget.h"
+#include "TextBlock.h"
 
 int main(int argc, char **argv) {
 
@@ -21,6 +23,20 @@ int main(int argc, char **argv) {
 	printf("START w2.doSomethingWithoutCopy(w1);\n");
 	w2.doSomethingWithoutCopy(w1);
 	printf("END w2.doSomethingWithoutCopy(w1);\n");
+
+	printf("\n\n\n\n");
+
+	TextBlock tb("Hello");
+	const TextBlock ctb("const Hello");
+
+	std::cout << tb[0] << std::endl;
+	std::cout << ctb[0] << std::endl;
+
+	tb[0] = 'x';
+	//ctb[0] = 'x';
+
+	std::cout << tb[0] << std::endl;
+	std::cout << ctb[0] << std::endl;
 }
 
 
