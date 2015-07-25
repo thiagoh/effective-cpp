@@ -28,7 +28,7 @@ Widget& Widget::operator=(const Widget& rhs) {
 
 void Widget::doSomethingWithCopy(const Widget rhs) {
 	printf("executing doSomethingWithCopy\n");
-	sleep(3);
+	sleep(1);
 }
 
 void Widget::doSomethingWithoutCopy(const Widget& rhs) {

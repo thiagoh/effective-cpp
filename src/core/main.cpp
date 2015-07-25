@@ -6,6 +6,8 @@
  */
 #include <stdio.h>
 #include <iostream>
+#include "Transaction.h"
+#include "DBTransaction.h"
 #include "Widget.h"
 #include "TextBlock.h"
 
@@ -24,7 +26,7 @@ int main(int argc, char **argv) {
 	w2.doSomethingWithoutCopy(w1);
 	printf("END w2.doSomethingWithoutCopy(w1);\n");
 
-	printf("\n\n\n\n");
+	printf("\n\n\n\n\n\n\n");
 
 	TextBlock tb("Hello");
 	const TextBlock ctb("const Hello");
@@ -37,6 +39,15 @@ int main(int argc, char **argv) {
 
 	std::cout << tb[0] << std::endl;
 	std::cout << ctb[0] << std::endl;
+
+	printf("\n\n\n\n\n\n\n");
+
+	DBTransaction dbTx;
+	Transaction* tx = &dbTx;
+
+	delete tx;
+
+	printf("\n\n\n\n\n\n\n");
 }
 
 
