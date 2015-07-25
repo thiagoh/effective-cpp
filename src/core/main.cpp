@@ -42,10 +42,11 @@ int main(int argc, char **argv) {
 
 	printf("\n\n\n\n\n\n\n");
 
-	DBTransaction dbTx;
-	Transaction* tx = &dbTx;
+	Transaction* dbTx = new DBTransaction();
+//	Transaction* tx = dbTx;
 
-	delete tx;
+//	delete tx;
+	delete dbTx;
 
 	printf("\n\n\n\n\n\n\n");
 }

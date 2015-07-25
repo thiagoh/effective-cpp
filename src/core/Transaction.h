@@ -11,7 +11,7 @@
 class Transaction {
 public:
 	Transaction();
-	~Transaction();
+	virtual ~Transaction();
 };
 
 #endif /* SRC_CORE_TRANSACTION_H_ */

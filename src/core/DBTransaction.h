@@ -13,7 +13,7 @@
 class DBTransaction: public Transaction {
 public:
 	DBTransaction();
-	~DBTransaction();
+	virtual ~DBTransaction();
 };
 
 #endif /* SRC_CORE_DBTRANSACTION_H_ */
