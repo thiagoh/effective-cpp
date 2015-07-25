@@ -16,4 +16,6 @@ Transaction::~Transaction() {
 	printf("Transaction::~Transaction() running\n");
 }
 
-//void Transaction::log() {}
+void Transaction::log() {
+	printf("Transaction::log() running\n");
+}

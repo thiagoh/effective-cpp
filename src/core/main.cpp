@@ -40,15 +40,29 @@ int main(int argc, char **argv) {
 	std::cout << tb[0] << std::endl;
 	std::cout << ctb[0] << std::endl;
 
+	printf("\n\nSTEP 2\n\n");
+
+	Transaction* tx1 = new DBTransaction();
+	delete tx1;
+
+	printf("\n\nSTEP 3\n\n");
+
+	Transaction* tx2 = new DBTransaction();
+	Transaction* tx3 = new Transaction();
+	tx2->log();
+	tx3->log();
+
+	printf("\n\nSTEP 4\n\n");
+
+	DBTransaction tx4;
+	DBTransaction tmpDBTX;
+	Transaction* tx5 = &tmpDBTX;
+	tx4.log();
+	tx5->log();
+
 	printf("\n\n\n\n\n\n\n");
 
-	Transaction* dbTx = new DBTransaction();
-//	Transaction* tx = dbTx;
-
-//	delete tx;
-	delete dbTx;
-
-	printf("\n\n\n\n\n\n\n");
+	delete tx2;
 }
 
 

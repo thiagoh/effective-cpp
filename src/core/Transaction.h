@@ -13,7 +13,7 @@ public:
 	Transaction();
 	virtual ~Transaction();
 
-	virtual void log() = 0;
+	virtual void log();
 };
 
 #endif /* SRC_CORE_TRANSACTION_H_ */
