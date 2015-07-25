@@ -14,6 +14,8 @@ class DBTransaction: public Transaction {
 public:
 	DBTransaction();
 	virtual ~DBTransaction();
+
+	void log();
 };
 
 #endif /* SRC_CORE_DBTRANSACTION_H_ */

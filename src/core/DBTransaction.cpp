@@ -16,3 +16,6 @@ DBTransaction::~DBTransaction() {
 	printf("DBTransaction::~DBTransaction() running\n");
 }
 
+void DBTransaction::log() {
+	printf("DBTransaction::log() running\n");
+}

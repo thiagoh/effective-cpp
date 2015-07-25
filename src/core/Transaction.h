@@ -12,6 +12,8 @@ class Transaction {
 public:
 	Transaction();
 	virtual ~Transaction();
+
+	virtual void log() = 0;
 };
 
 #endif /* SRC_CORE_TRANSACTION_H_ */
