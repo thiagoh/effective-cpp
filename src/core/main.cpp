@@ -10,6 +10,7 @@
 #include "DBTransaction.h"
 #include "Widget.h"
 #include "TextBlock.h"
+#include "SharedPtr.h"
 
 int main(int argc, char **argv) {
 
@@ -60,9 +61,36 @@ int main(int argc, char **argv) {
 	tx4.log();
 	tx5->log();
 
-	printf("\n\n\n\n\n\n\n");
+	printf("\n\n\n\n");
 
 	delete tx2;
+
+	printf("\n\n\n\nSTEP 5\n\n");
+
+	{
+		SharedPtr<Transaction> s1(new Transaction());
+		s1.get()->log();
+
+		{
+			SharedPtr<Transaction> s2(s1);
+			SharedPtr<Transaction> s3(s2);
+			SharedPtr<Transaction> s4(s3);
+			{
+				SharedPtr<Transaction> s5(s2);
+				s5 = s3;
+			}
+			SharedPtr<Transaction> s6 = s3;
+			s6 = s4;
+			s6 = s3;
+			s6 = s2;
+			s6 = s1;
+			SharedPtr<Transaction> *ptr;
+			ptr = &s6;
+			s6 = *ptr;
+		}
+	}
+
+	printf("\n\n\n\n END OF PROGRAM\n");
 }
 
 
