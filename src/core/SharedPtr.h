@@ -40,11 +40,11 @@ public:
 	}
 
 	T& operator*() {
-		return *this;
+		return *_ptr;
 	}
 
 	T* operator->() {
-		return this;
+		return _ptr;
 	}
 
 	virtual ~SharedPtr() {

@@ -69,7 +69,12 @@ int main(int argc, char **argv) {
 
 	{
 		SharedPtr<Transaction> s1(new Transaction());
+
+		printf("Test of using operators to access the wrapped pointer\n");
 		s1.get()->log();
+		s1->log();
+		(*s1).log();
+		printf("End of test\n\n");
 
 		{
 			SharedPtr<Transaction> s2(s1);
@@ -87,6 +92,12 @@ int main(int argc, char **argv) {
 			SharedPtr<Transaction> *ptr;
 			ptr = &s6;
 			s6 = *ptr;
+
+			printf("\nTest of using operators to access the wrapped pointer from copied SharedPtr\n");
+			s6.get()->log();
+			s6->log();
+			(*s6).log();
+			printf("End of test\n\n");
 		}
 	}
 
