@@ -2,7 +2,7 @@
  * SharedPtr.h
  *
  *  Created on: Jul 27, 2015
- *      Author: thiago
+ *      Author: Thiago Andrade
  */
 
 #ifndef SRC_CORE_SHAREDPTR_H_
@@ -18,14 +18,14 @@
 template<typename T>
 class SharedPtr {
 public:
-	SharedPtr(T* ptr):
-		_ptr(ptr), _c(0) {
+	SharedPtr(T* ptr) :
+			_ptr(ptr), _c(0) {
 		_c = new Counter(0);
 		_c->addRef();
 	}
 
 	SharedPtr(const SharedPtr<T>& rhs) :
-		_ptr(rhs._ptr), _c(rhs._c) {
+			_ptr(rhs._ptr), _c(rhs._c) {
 		_addRef(rhs);
 	}
 
@@ -71,12 +71,16 @@ private:
 
 	class Counter {
 	public:
-		Counter(unsigned int c): _refs(c) {
+		Counter(unsigned int c) :
+				_refs(c) {
 			printf("Counter ctor\n");
-		};
-		Counter(const Counter& rhs): _refs(rhs._refs) {
+		}
+		;
+		Counter(const Counter& rhs) :
+				_refs(rhs._refs) {
 			printf("Counter copy ctor\n");
-		};
+		}
+		;
 
 		~Counter() {
 		}
