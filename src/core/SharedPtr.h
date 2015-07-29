@@ -24,12 +24,12 @@ public:
 		_c->addRef();
 	}
 
-	SharedPtr(const SharedPtr& rhs) :
+	SharedPtr(const SharedPtr<T>& rhs) :
 		_ptr(rhs._ptr), _c(rhs._c) {
 		_addRef(rhs);
 	}
 
-	SharedPtr& operator=(const SharedPtr& rhs) {
+	SharedPtr<T>& operator=(const SharedPtr<T>& rhs) {
 		if (this == &rhs) {
 			printf("I've fallen into identity test!\n");
 			return *this;
@@ -37,6 +37,14 @@ public:
 		_c->releaseRef();
 		_addRef(rhs);
 		return *this;
+	}
+
+	T& operator*() {
+		return *this;
+	}
+
+	T* operator->() {
+		return this;
 	}
 
 	virtual ~SharedPtr() {
@@ -55,7 +63,7 @@ public:
 	}
 private:
 
-	void _addRef(const SharedPtr& rhs) {
+	void _addRef(const SharedPtr<T>& rhs) {
 		_ptr = rhs._ptr;
 		_c = rhs._c;
 		_c->addRef();
