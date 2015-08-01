@@ -1,3 +1,6 @@
 # effective-cpp
 
-Shared pointers implementation 
+Inheritance dtor
+
+Shared pointers implementation
+Raw access
