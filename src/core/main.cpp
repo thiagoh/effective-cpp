@@ -10,7 +10,7 @@
 #include "DBTransaction.h"
 #include "Widget.h"
 #include "TextBlock.h"
-#include "SharedPtr.h"
+#include "VerboseSharedPtr.h"
 
 int main(int argc, char **argv) {
 
