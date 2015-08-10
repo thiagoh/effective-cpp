@@ -9,8 +9,12 @@
 #include "Transaction.h"
 #include "DBTransaction.h"
 #include "TextBlock.h"
+<<<<<<< HEAD
 #include "SharedPtr.h"
 #include "WidgetImpl.h"
+=======
+#include "VerboseSharedPtr.h"
+>>>>>>> 440ae5ea84fbb3601776d23daf4cbb11c1b8fffc
 
 int main(int argc, char **argv) {
 
