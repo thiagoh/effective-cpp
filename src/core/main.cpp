@@ -8,16 +8,16 @@
 #include <iostream>
 #include "Transaction.h"
 #include "DBTransaction.h"
-#include "Widget.h"
 #include "TextBlock.h"
 #include "SharedPtr.h"
+#include "WidgetImpl.h"
 
 int main(int argc, char **argv) {
 
-	Widget* wp;
-	*wp = Widget();
-	Widget w1 = *wp;
-	Widget w2(w1);
+	WidgetImpl* wp;
+	*wp = WidgetImpl();
+	WidgetImpl w1 = *wp;
+	WidgetImpl w2(w1);
 	w2 = w1;
 	w2 = *wp;
 	printf("START w2.doSomethingWithCopy(w1);\n");
