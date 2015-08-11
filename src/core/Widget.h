@@ -11,6 +11,11 @@
 #include "WidgetImpl.h"
 #include <algorithm>
 
+/*
+ * PImpl nice examples and explanations
+ * http://cplusplus.bordoon.com/copyConstructors.html
+ */
+
 class Widget {
 public:
 	Widget(): p(new WidgetImpl()) {
