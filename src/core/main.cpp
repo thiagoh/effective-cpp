@@ -9,19 +9,15 @@
 #include "Transaction.h"
 #include "DBTransaction.h"
 #include "TextBlock.h"
-<<<<<<< HEAD
+#include "Widget.h"
 #include "SharedPtr.h"
-#include "WidgetImpl.h"
-=======
-#include "VerboseSharedPtr.h"
->>>>>>> 440ae5ea84fbb3601776d23daf4cbb11c1b8fffc
 
 int main(int argc, char **argv) {
 
-	WidgetImpl* wp;
-	*wp = WidgetImpl();
-	WidgetImpl w1 = *wp;
-	WidgetImpl w2(w1);
+	Widget* wp = new Widget();
+//	*wp = Widget();
+	Widget w1 = *wp;
+	Widget w2(w1);
 	w2 = w1;
 	w2 = *wp;
 	printf("START w2.doSomethingWithCopy(w1);\n");
